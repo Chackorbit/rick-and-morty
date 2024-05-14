@@ -1,7 +1,7 @@
 import { Character } from "@/app/page";
 
 interface ModalProps {
-  character: Character | null;
+  character: Character;
   closeModal: () => void;
 }
 

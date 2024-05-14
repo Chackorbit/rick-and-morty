@@ -41,7 +41,7 @@ export default function Home() {
   const [isOpenDropdown, setIsOpenDropdown] = useState(false);
   const [filterParametr, setFilterParametr] = useState<string>("name");
 
-  const [modalCharacter, setModalCharacter] = useState<Character | null>(null);
+  const [modalCharacter, setModalCharacter] = useState<Character>(Object);
   const [modalIsOpen, setModalIsOpen] = useState<Boolean>(false);
 
   const openModal = (character: Character) => {
