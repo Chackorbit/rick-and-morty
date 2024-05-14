@@ -6,12 +6,7 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ character, closeModal }) => {
-  console.log("character: ", character);
   const { name, gender, species, image, status, origin } = character;
-  //   const closeModal = () => {
-  //     const modal = document.getElementById("default-modal");
-  //     modal?.classList.add("hidden");
-  //   };
 
   return (
     <>
