@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Button from "./components/Button/Button";
 import Card from "./components/Card/card";
 import Modal from "./components/Modal/Modal";
-import { instance, urlCharacter } from "./helpers/api";
+import { urlCharacter } from "./helpers/api";
 import axios from "axios";
 import SortDropdown from "./components/SortDropdown/SortDropdown";
 
