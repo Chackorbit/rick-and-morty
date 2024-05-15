@@ -59,6 +59,7 @@ export default function Home() {
   };
 
   const nextPage = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     return setPage((prev) => prev + 1);
   };
   const prevPage = () => {
@@ -89,7 +90,7 @@ export default function Home() {
 
   return (
     <main className="p-[20px]">
-      <form>
+      <form className="mb-[20px]">
         <div className="flex relative">
           <button
             onClick={() => setIsOpenDropdown(!isOpenDropdown)}
@@ -133,6 +134,33 @@ export default function Home() {
           </div>
         </div>
       </form>
+
+      <div className="flex items-center justify-center">
+        {dataInfo?.prev ? (
+          <Button disabled={false} onClick={prevPage}>
+            Prev
+          </Button>
+        ) : (
+          <Button disabled={true} onClick={prevPage}>
+            Prev
+          </Button>
+        )}
+        {
+          <p className="mr-[10px] mb-[10px] p-[5px] border border-solid border-gray-400 rounded-[5px]">
+            {page}
+          </p>
+        }
+
+        {dataInfo?.next ? (
+          <Button disabled={false} onClick={nextPage}>
+            Next
+          </Button>
+        ) : (
+          <Button disabled={true} onClick={nextPage}>
+            Next
+          </Button>
+        )}
+      </div>
 
       {errorMessage ? (
         <div className="w-[100%] h-[400px] flex items-center justify-center ">
