@@ -84,7 +84,6 @@ export default function Home() {
       })
       .catch((error) => {
         setErrorMessage(error.message);
-        console.error("Error fetching filtered data:", error);
       });
   }, [filter, filterParametr, page, sort]);
 
