@@ -1,4 +1,4 @@
-import { Character } from "./page";
+import { Character } from "../../page";
 
 interface CardProps {
   character: Character;
@@ -7,11 +7,6 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ character, openModal }) => {
   const { name, image, status, location, species, gender } = character;
-
-  //   const openModal = () => {
-  //     const modal = document.getElementById("default-modal");
-  //     modal?.classList.remove("hidden");
-  //   };
 
   return (
     <div className="card" id="card" onClick={() => openModal(character)}>
