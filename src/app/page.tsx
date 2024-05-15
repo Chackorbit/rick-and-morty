@@ -89,8 +89,6 @@ export default function Home() {
 
   return (
     <main className="p-[20px]">
-      <h1>Dashboard</h1>
-
       <form>
         <div className="flex relative">
           <button
@@ -127,7 +125,9 @@ export default function Home() {
               className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg rounded-s-gray-100 rounded-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
               placeholder="Search by name"
               value={filter}
-              onChange={(e) => setFilter(e.target.value)}
+              onChange={(e) => {
+                setFilter(e.target.value), setPage(1);
+              }}
               required
             />
           </div>
@@ -158,6 +158,12 @@ export default function Home() {
             Prev
           </Button>
         )}
+        {
+          <p className="mr-[10px] mb-[10px] p-[5px] border border-solid border-gray-400 rounded-[5px]">
+            {page}
+          </p>
+        }
+
         {dataInfo?.next ? (
           <Button disabled={false} onClick={nextPage}>
             Next
